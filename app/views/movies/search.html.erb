@@ -1,0 +1,11 @@
+<h1>Find Movie</h1>
+<h2>Please fill out at least one field below.</h2>
+<%= form_tag "/search", method:"get"  do %>
+    <%= label_tag :query, "Search: " %>
+    <%= text_field_tag :query %>
+    <br />
+    <%= submit_tag "Search" %>
+<% end %> 
+
+<%= link_to "Home", "/movies" %>
+<%= link_to "Back", "/movies" %>

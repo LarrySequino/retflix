@@ -1,0 +1,15 @@
+<h1>Welcome to RetFlix!</h1>
+
+<h2>See our collection of movies below:</h2> 
+
+<ul>
+    <% @movies.each do |movie| %>
+    <li><%= link_to movie.title, "/movies/show/#{movie.id}" %></li> 
+    <% end %>
+</ul>
+
+
+<br />
+<%= link_to "Add Movie", "/movies/new" %>
+<%= link_to "Search", "/movies/search" %>
+<%= link_to "Back", "/movies" %>

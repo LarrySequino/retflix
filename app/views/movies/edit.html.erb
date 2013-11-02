@@ -1,0 +1,25 @@
+<h1>Edit <%= @movie.title %></h1>
+<%= form_for @movie, :url => {:action => 'update', :id => @movie.id} do |f| %>
+
+<% if @movie.errors.full_messages.length > 0 %>
+    <ul style="color: red">
+    <%@movie.errors.full_messages.each do |error|%>
+        <li><%=  error %></li>
+    <% end %>
+    </ul>
+<%  end %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, {:value => @movie.title} %>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_field :description, {:value => @movie.description} %>
+    <br />
+    <%= f.label :year_released %>
+    <%= f.number_field :year_released, {:value => @movie.year_released} %>
+    <br />
+
+    <%= f.submit "Edit Movie" %>
+<% end %>
+
+<%= link_to "Back", :back %>

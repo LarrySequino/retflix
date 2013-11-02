@@ -1,0 +1,26 @@
+<h1>New Movie</h1>
+
+<%= form_for @movie do |f| %>
+<% if @movie.errors.full_messages.length > 0 %>
+    <ul style="color: red">
+    <%@movie.errors.full_messages.each do |error|%>
+        <li><%=  error %></li>
+    <% end %>
+    </ul>
+<%  end %>
+    <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    </p>
+    <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    </p>
+    <p>
+    <%= f.label :year_released %>
+    <%= f.number_field :year_released %>
+    </p>
+    <%= f.submit "Add Movie" %>
+<% end %> 
+
+<%= link_to "Back", "/movies" %>

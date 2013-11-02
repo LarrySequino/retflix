@@ -1,0 +1,9 @@
+<h1>Results for '<%= @query.camelize %>'</h1>
+<ul>
+    <% @movies.each do |movie| %>
+    <li><%= link_to movie.title, "/movies/show/#{movie.id}" %></li> 
+    <% end %>
+</ul>
+
+<%= link_to "Home", "/movies" %>
+<%= link_to "Back", :back %>
